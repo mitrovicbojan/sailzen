@@ -1,0 +1,234 @@
+/*
+COLORS:
+
+Light violet: #d0bfff
+Medium violet: #9775fa
+Dark violet: #5f3dc4
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(151, 117, 250, 0.8),
+      rgba(208, 191, 255, 0.8)
+    ),
+    url(../images/hero.webp);
+
+  background-size: cover;
+  background-position: top;
+  /* clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); */
+
+  clip-path: polygon(
+    100% 0%,
+    0% 0%,
+    0% 91.88%,
+    2% 91.8%,
+    4% 91.57%,
+    6% 91.19%,
+    8% 90.69%,
+    10% 90.07%,
+    12% 89.36%,
+    14% 88.59%,
+    16% 87.77%,
+    18% 86.95%,
+    20% 86.15%,
+    22% 85.39%,
+    24% 84.71%,
+    26% 84.13%,
+    28% 83.67%,
+    30% 83.34%,
+    32% 83.16%,
+    34% 83.13%,
+    36% 83.26%,
+    38% 83.54%,
+    40% 83.96%,
+    42% 84.51%,
+    44% 85.16%,
+    46% 85.89%,
+    48% 86.68%,
+    50% 87.5%,
+    52% 88.32%,
+    54% 89.11%,
+    56% 89.84%,
+    58% 90.49%,
+    60% 91.04%,
+    62% 91.46%,
+    64% 91.74%,
+    66% 91.87%,
+    68% 91.84%,
+    70% 91.66%,
+    72% 91.33%,
+    74% 90.87%,
+    76% 90.29%,
+    78% 89.61%,
+    80% 88.85%,
+    82% 88.05%,
+    84% 87.23%,
+    86% 86.41%,
+    88% 85.64%,
+    90% 84.93%,
+    92% 84.31%,
+    94% 83.81%,
+    96% 83.43%,
+    98% 83.2%,
+    100% 83.13%
+  );
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 45px;
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  margin-bottom: 60px;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+
+  /* animation-delay: 3s;
+    animation-iteration-count: 3;
+     */
+}
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+  animation: moveInRight 1s ease-out;
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  border-radius: 100px;
+  display: inline-block;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
